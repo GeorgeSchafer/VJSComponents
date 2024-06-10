@@ -33,7 +33,7 @@ const event = {
         click: 'click',
     }
 }
-const unit = {
+const UNIT = {
     /* No units */
     none: '',
 
