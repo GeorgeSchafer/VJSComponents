@@ -8,14 +8,14 @@ import {
 
 
 // Pre-defined property strings
-const display = {
+const DISPLAY = {
     block: 'block',
     inline: 'inline',
     inlineBlock: 'inline-block',
     flex: 'flex',
     grid: 'grid',
 }
-const event = {
+const EVENT = {
     page: {
         load: 'load',
         resize: 'resize',
@@ -55,7 +55,7 @@ const UNIT = {
     rlh: 'rlh',
     percent: '%',
 }
-const flex = {
+const FLEX = {
     /*  pre-baked flexbox classes for vanilla.css */
     c: 'flex-c',
     cw: 'flex-cw',
@@ -89,7 +89,7 @@ const flex = {
         default: 'flex-default'
     }
 }
-const tag = {
+const TAG = {
     html: 'html',
     div: 'div',
     ul: 'ul',
@@ -142,7 +142,7 @@ class StyleSheet extends JSONCSS {
      * @property cssTexttype Read only Deprecated
      * Returns one of the Type constants to determine which type of rule is represented.
      */
-    constructor(cssRulesObj = null, keyframesObj = null) {
+    constructor(cssRulesObj=null, keyframesObj=null) {
         super(cssRulesObj, keyframesObj)
     }
 
@@ -347,7 +347,7 @@ class Form extends Classable {
 }
 
 class Button extends Classable {
-    constructor(textContent = "click me", formName = null, classList=[], id=null) {
+    constructor(textContent = "click me", formName=null, classList=[], id=null) {
         super(document.createElement('button'), classList, id)
         const button = this.element
         this.addToClassList(classList)
@@ -369,7 +369,7 @@ class TextArea extends Classable {
 }
 
 class Input extends Classable {
-    constructor(typeStr, placeholder, textContent = null, forStr = null, classList=[], id=null) {
+    constructor(typeStr, placeholder, textContent=null, forStr=null, classList=[], id=null) {
         super(document.createElement('input'), classList, id)
         const input = this.element
         this.addToClassList(classList)
@@ -513,7 +513,7 @@ class PSpan extends P {
 }
 
 class Label extends TextElement {
-    constructor(alias, textContent = null, classList=[], id=null) {
+    constructor(alias, textContent=null, classList=[], id=null) {
         super(document.createElement('label'), classList, id)
         this.textContent(textContent)
         this.addToClassList(classList)
@@ -533,7 +533,7 @@ class A extends TextElement {
 }
 
 class Abbr extends TextElement {
-    constructor(textContent = 'str', title = null, classList=[], id=null) {
+    constructor(textContent = 'str', title=null, classList=[], id=null) {
         super(document.createElement('abbr'), classList, id)
         this.textContent(textContent)
         this.addToClassList(classList)
@@ -675,18 +675,17 @@ function addAdoptedStyleSheet(rules) {
 
 export {
     // Constants
-    display,
-    flex,
-    event,
-    unit,
-    tag,
+    DISPLAY,
+    FLEX,
+    EVENT,
+    UNIT,
+    TAG,
 
     // Base Classes
     OptionSelection,
     StyleSheet,
     Listener,
     ListenerOnLoad,
-    // FlexBoxClass,
 
     // Classables
     // // Containers
